@@ -7,6 +7,7 @@ import { RegisterComponent } from './login/register/register.component';
 import { APP_ROUTES } from './app.route';
 import { PagesModule } from './pages/pages.module';
 import { AdminComponent } from './admin/admin.component';
+import { PagesAdminComponent } from './admin/pages-admin/pages-admin.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { AdminComponent } from './admin/admin.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    AdminComponent
+    AdminComponent,
+    PagesAdminComponent
   ],
   imports: [
     BrowserModule,
