@@ -7,7 +7,8 @@ import { RegisterComponent } from './login/register/register.component';
 import { APP_ROUTES } from './app.route';
 import { PagesModule } from './pages/pages.module';
 import { AdminComponent } from './admin/admin.component';
-import { PagesAdminComponent } from './admin/pages-admin/pages-admin.component';
+import { AdminModule } from './admin/admin.module';
+
 
 
 @NgModule({
@@ -15,13 +16,12 @@ import { PagesAdminComponent } from './admin/pages-admin/pages-admin.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    AdminComponent,
-    PagesAdminComponent
   ],
   imports: [
     BrowserModule,
     APP_ROUTES,
-    PagesModule
+    PagesModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]

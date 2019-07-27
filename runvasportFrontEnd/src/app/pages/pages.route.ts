@@ -11,14 +11,14 @@ import { InscriptionComponent } from './inscription/inscription.component';
 
 const pagesRoutes: Routes = [
     {
-        path: '',
+        path: 'home',
         component: PagesComponent,
         children: [
-            { path: 'dashboard', component: DashboardComponent },
+            { path: '', component: DashboardComponent },
             { path: 'calendar', component: CalendarComponent },
             { path: 'clasifications', component: ClasificationsComponent },
             { path: 'contact', component: ContactComponent },
-            { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
+            { path: '', redirectTo: '/home', pathMatch: 'full' }
         ]
     }
 ];

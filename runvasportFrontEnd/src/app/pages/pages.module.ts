@@ -23,7 +23,6 @@ import { ClasificationsComponent } from './clasifications/clasifications.compone
     ],
     exports: [
         DashboardComponent,
-        DashboardComponent,
         ContactComponent,
         CalendarComponent,
         ClasificationsComponent,
