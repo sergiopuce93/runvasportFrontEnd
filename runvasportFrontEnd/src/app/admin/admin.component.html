@@ -17,33 +17,14 @@
             <ul class="nav navbar-nav navbar-right">
 
                 <li>
-                    <a href="#pablo">
-                Bienvenido Justino
+                    <a><span><i class="fas fa-user"></i></span>
+                Hola Justino
             </a>
                 </li>
                 <li>
                     <a href="#pablo">
-                Wishlist
-            </a>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#pablo" class="profile-photo dropdown-toggle" data-toggle="dropdown">
-
+                        Cerrar sesion
                     </a>
-                    <ul class="dropdown-menu">
-                        <li class="dropdown-header">
-                            Dropdown header
-                        </li>
-                        <li>
-                            <a href="#pablo">Me</a>
-                        </li>
-                        <li>
-                            <a href="#pablo">Settings and other stuff</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="#pablo">Sign out</a></li>
-                    </ul>
                 </li>
             </ul>
         </div>
@@ -55,10 +36,10 @@
 <div class="row">
     <div class="col-md-2" style="border-right: 1px black solid">
         <ul class="nav nav-pills nav nav-stacked">
-            <li class="active"><a href="#tab1" data-toggle="tab" aria-expanded="true">Tablon</a></li>
-            <li class=""><a href="#tab2" data-toggle="tab" aria-expanded="false">Eventos</a></li>
-            <li class=""><a href="#tab3" data-toggle="tab" aria-expanded="false">Cupones</a></li>
-            <li class=""><a href="#tab3" data-toggle="tab" aria-expanded="false">Usuarios</a></li>
+            <li class="active"><a data-toggle="tab" aria-expanded="true" (click)="navigateTablon()">Tablon</a></li>
+            <li class=""><a data-toggle="tab" aria-expanded="false" (click)="navigateEvents()">Eventos</a></li>
+            <li class=""><a href="#tab3" data-toggle="tab" aria-expanded="false" (click)="navigateCupons()">Cupones</a></li>
+            <li class=""><a href="#tab3" data-toggle="tab" aria-expanded="false" (click)="navigateUsers()">Usuarios</a></li>
         </ul>
     </div>
     <div>
