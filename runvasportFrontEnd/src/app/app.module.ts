@@ -6,11 +6,9 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register/register.component';
 import { APP_ROUTES } from './app.route';
 import { PagesModule } from './pages/pages.module';
-import { AdminComponent } from './admin/admin.component';
 import { AdminModule } from './admin/admin.module';
-
-
-
+import { EventoService } from './services/evento.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,9 +20,10 @@ import { AdminModule } from './admin/admin.module';
     BrowserModule,
     APP_ROUTES,
     PagesModule,
-    AdminModule
+    AdminModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [EventoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

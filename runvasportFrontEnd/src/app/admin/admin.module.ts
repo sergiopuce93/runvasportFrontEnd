@@ -8,7 +8,10 @@ import { EventosComponent } from './eventos/eventos.component';
 import { NuevoEventoComponent } from './eventos/nuevo-evento/nuevo-evento.component';
 import { NuevoCuponComponent } from './cupones/nuevo-cupon/nuevo-cupon.component';
 import { NuevoUsuarioComponent } from './usuarios/nuevo-usuario/nuevo-usuario.component';
-
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -19,7 +22,8 @@ import { NuevoUsuarioComponent } from './usuarios/nuevo-usuario/nuevo-usuario.co
         EventosComponent,
         NuevoEventoComponent,
         NuevoCuponComponent,
-        NuevoUsuarioComponent
+        NuevoUsuarioComponent,
+        
     ],
     exports: [
         UsuariosComponent,
@@ -28,7 +32,11 @@ import { NuevoUsuarioComponent } from './usuarios/nuevo-usuario/nuevo-usuario.co
         EventosComponent
     ],
     imports: [
-        ADMIN_ROUTES
+        ADMIN_ROUTES,
+        BrowserModule,
+        CommonModule,
+        Ng2SearchPipeModule,
+        FormsModule
     ]
 })
 export class AdminModule { }
