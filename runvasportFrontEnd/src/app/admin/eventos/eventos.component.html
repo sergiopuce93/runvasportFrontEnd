@@ -1,21 +1,53 @@
 <div class="container">
     <div class="col-md-12">
-        <button class="btn btn-primary btn-round">Crear evento</button>
-        <div class="table-responsive">
+        <div class="card card-plain card-form-horizontal" style="margin-bottom:0">
+            <div class="card-content">
+                <div class="row">
+                    <div _ngcontent-c12="">
+                        <button _ngcontent-c12="" class="icon-btn add-btn col-md-2">
+                            <div _ngcontent-c12="" class="add-icon"></div><div _ngcontent-c12="" class="btn-txt" style="color:white">Nuevo
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col-sm-10">
+                        <div class="form-group form-white is-empty">
+                            <input type="text" class="form-control" placeholder="Buscar" [(ngModel)]="search">
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive fadeIn">
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Nombre</th>
-                        <th>Poblacion</th>
-                        <th>Ciudad</th>
-                        <th class="text-right">Fecha</th>
-                        <th class="text-right">Actions</th>
+                        <th>Evento</th>
+                        <th>Lugar</th>
+                        <th>Fecha</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-
+                    <tr *ngFor="let event of listEvents | filter: search">
+                        <td class="tablaHover">{{event.name}}</td>
+                        <td class="tablaHover">{{event.place}}</td>
+                        <td class="tablaHover">{{event.dateEnd}}</td>
+                        <td class="td-actions">
+                            <button type="button" rel="tooltip" class="btn btn-info btn-round mr-2" data-original-title="" title="">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button type="button" rel="tooltip" class="btn btn-warning btn-round" data-original-title="" title="">
+                                <i class="material-icons">edit</i>
+                            </button>
+                            <button type="button" rel="tooltip" class="btn btn-danger btn-round" data-original-title="" title="">
+                                <i class="material-icons">close</i>
+                            </button>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
+
         </div>
     </div>
 </div>
