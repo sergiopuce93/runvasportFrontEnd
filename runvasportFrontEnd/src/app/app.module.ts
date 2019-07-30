@@ -21,7 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     APP_ROUTES,
     PagesModule,
     AdminModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [EventoService],
   bootstrap: [AppComponent]
