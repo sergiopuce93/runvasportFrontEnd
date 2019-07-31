@@ -50,15 +50,11 @@
                             </button>
                         </td>
                     </tr>
-                    <tr>
-                        <td colspan="2 "></td>
-                        <td>
-
-                        </td>
+                    <tr *ngIf="(listEvents | filter:search) == 0">
+                        <td colspan="5" class="text-center fadeIn">No se encontraron resultados...</td>
                     </tr>
                 </tbody>
             </table>
-
         </div>
     </div>
 </div>
