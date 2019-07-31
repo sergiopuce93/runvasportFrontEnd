@@ -23,7 +23,7 @@ import { FormsModule } from '@angular/forms';
         NuevoEventoComponent,
         NuevoCuponComponent,
         NuevoUsuarioComponent,
-        
+
     ],
     exports: [
         UsuariosComponent,
