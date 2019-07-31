@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="table-responsive fadeIn">
-            <table class="table">
+            <table class="table table-hover">
                 <thead>
                     <tr>
                         <th>Evento</th>
@@ -35,8 +35,8 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let event of listEvents | filter: search" class="fadeIn">
-                        <td class="tablaHover ">{{event.name}}</td>
-                        <td class="tablaHover ">{{event.place}}</td>
+                        <td class="tablaHover">{{event.name}}</td>
+                        <td class="tablaHover">{{event.place}}</td>
                         <td class="tablaHover ">{{event.dateEnd}}</td>
                         <td class="td-actions ">
                             <button type="button " rel="tooltip " class="btn btn-info btn-round mr-2 " data-original-title=" " title=" ">
