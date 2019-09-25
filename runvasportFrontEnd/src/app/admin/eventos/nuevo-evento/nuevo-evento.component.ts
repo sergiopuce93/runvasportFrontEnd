@@ -10,6 +10,7 @@ export class NuevoEventoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
