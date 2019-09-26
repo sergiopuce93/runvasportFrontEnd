@@ -1,138 +1,278 @@
 <div>
     <div class="row">
-        <div class="col-md-4">
-            <!-- Tabs with icons on Card -->
+        <div class="col-md-1">
+            <ul class="nav nav-pills nav-pills-icons nav-stacked" role="tablist">
+                <li class="active ">
+                    <a href="#dashboard-2" role="tab" data-toggle="tab">
+                        <i class="material-icons">dashboard</i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#schedule-2" role="tab" data-toggle="tab">
+                        <i class="fas fa-calendar-plus"></i>Evento
+                    </a>
+                </li>
+                <li>
+                    <a href="#schedule-2" role="tab" data-toggle="tab">
+                        <i class="fas fa-sliders-h"></i> Ajustes
+                    </a>
+                </li>
+                <li>
+                    <a href="#schedule-2" role="tab" data-toggle="tab">
+                        <i class="fas fa-address-card"></i> Perfil
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-3">
             <div class="card card-nav-tabs">
                 <div class="header header-primary">
                     <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
-                    <div class="nav-tabs-navigation">
-                        <div class="nav-tabs-wrapper">
-                            <ul class="nav nav-tabs" data-tabs="tabs">
-                                <li class="active">
-                                    <a href="#profile" data-toggle="tab">
-                                        <i class="material-icons">face</i> Profile
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#messages" data-toggle="tab">
-                                        <i class="material-icons">chat</i> Messages
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#settings" data-toggle="tab">
-                                        <i class="material-icons">build</i> Settings
-                                    </a>
-
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="container">
+                        <h4 class="card-title">Ultimos 7 dias</h4>
                     </div>
                 </div>
                 <div class="card-content">
-                    <div class="tab-content text-center">
-                        <div class="tab-pane active" id="profile">
-                            <p> I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show
-                                people, this is the level that things could be at. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. </p>
-                        </div>
-                        <div class="tab-pane" id="messages">
-                            <p> I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. I will be the leader of a company that ends up being worth billions of dollars, because I got the
-                                answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.</p>
-                        </div>
-                        <div class="tab-pane" id="settings">
-                            <p>I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. So when you get something that has the name Kanye West on it, it’s supposed to be pushing the furthest
-                                possibilities. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus.</p>
-                        </div>
+                    <div echarts [options]="chartOption" class="echart"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-nav-tabs">
+                <div class="header header-primary">
+                    <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+                    <div class="container">
+                        <h4 class="card-title">Ultimas 24 horas</h4>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-content">
+                        <div echarts [options]="chartOption2" class="echart"></div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
-            <!-- Tabs with icons on Card -->
             <div class="card card-nav-tabs">
                 <div class="header header-primary">
                     <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
-                    <div class="nav-tabs-navigation">
-                        <div class="nav-tabs-wrapper">
-                            <ul class="nav nav-tabs" data-tabs="tabs">
-                                <li class="active">
-                                    <a href="#profile" data-toggle="tab">
-                                        <i class="material-icons">face</i> Profile
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#messages" data-toggle="tab">
-                                        <i class="material-icons">chat</i> Messages
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#settings" data-toggle="tab">
-                                        <i class="material-icons">build</i> Settings
-                                    </a>
-
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="container">
+                        <h4 class="card-title">Ultimas inscripciones</h4>
                     </div>
                 </div>
                 <div class="card-content">
-                    <div class="tab-content text-center">
-                        <div class="tab-pane active" id="profile">
-                            <p> I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show
-                                people, this is the level that things could be at. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. </p>
-                        </div>
-                        <div class="tab-pane" id="messages">
-                            <p> I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. I will be the leader of a company that ends up being worth billions of dollars, because I got the
-                                answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.</p>
-                        </div>
-                        <div class="tab-pane" id="settings">
-                            <p>I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. So when you get something that has the name Kanye West on it, it’s supposed to be pushing the furthest
-                                possibilities. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus.</p>
-                        </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Nombre</th>
+                                    <th>Fecha</th>
+                                    <th class="text-right">Tarifa</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>Daniel</td>
+                                    <td>10/092013</td>
+                                    <td class="text-right">10,00€</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>Daniel</td>
+                                    <td>10/092013</td>
+                                    <td class="text-right">10,00€</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>Daniel</td>
+                                    <td>10/092013</td>
+                                    <td class="text-right">10,00€</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>Daniel</td>
+                                    <td>10/092013</td>
+                                    <td class="text-right">10,00€</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>Daniel</td>
+                                    <td>10/092013</td>
+                                    <td class="text-right">10,00€</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <!-- Tabs with icons on Card -->
+        <div class="col-md-12">
             <div class="card card-nav-tabs">
                 <div class="header header-primary">
                     <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
-                    <div class="nav-tabs-navigation">
-                        <div class="nav-tabs-wrapper">
-                            <ul class="nav nav-tabs" data-tabs="tabs">
-                                <li class="active">
-                                    <a href="#profile" data-toggle="tab">
-                                        <i class="material-icons">face</i> Profile
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#messages" data-toggle="tab">
-                                        <i class="material-icons">chat</i> Messages
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#settings" data-toggle="tab">
-                                        <i class="material-icons">build</i> Settings
-                                    </a>
-
-                                </li>
-                            </ul>
-                        </div>
+                    <div style="margin-left: 50%">
+                        <h4 class="card-title center">Ultimos eventos</h4>
                     </div>
                 </div>
                 <div class="card-content">
-                    <div class="tab-content text-center">
-                        <div class="tab-pane active" id="profile">
-                            <p> I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show
-                                people, this is the level that things could be at. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. </p>
-                        </div>
-                        <div class="tab-pane" id="messages">
-                            <p> I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. I will be the leader of a company that ends up being worth billions of dollars, because I got the
-                                answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.</p>
-                        </div>
-                        <div class="tab-pane" id="settings">
-                            <p>I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. So when you get something that has the name Kanye West on it, it’s supposed to be pushing the furthest
-                                possibilities. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus.</p>
+                    <div class="card-content">
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="table-responsive">
+                                <table class="table table-shopping">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center"></th>
+                                            <th>Evento</th>
+                                            <th class="th-description">Fecha</th>
+                                            <th class="th-description">Hoy</th>
+                                            <th class="text-right">Semana</th>
+                                            <th class="text-right">Mes</th>
+                                            <th class="text-right">Total</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="img-container">
+                                                    <img src="./../../../assets/images/cartelTest.jpg" alt="...">
+                                                </div>
+                                            </td>
+                                            <td class="td-name">
+                                                <a href="#jacket">VI Trail Barranqueras de Toro</a>
+                                                <br><small>Toro, Valladolid</small>
+                                            </td>
+                                            <td>
+                                                25/03/2020
+                                            </td>
+                                            <td>
+                                                12
+                                            </td>
+                                            <td class="td-number">
+                                                59
+                                            </td>
+                                            <td class="td-number">
+                                                147
+                                            </td>
+                                            <td class="td-number">
+                                                690
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="img-container">
+                                                    <img src="./../../../assets/images/cartelTest.jpg" alt="...">
+                                                </div>
+                                            </td>
+                                            <td class="td-name">
+                                                <a href="#jacket">VI Trail Barranqueras de Toro</a>
+                                                <br><small>Toro, Valladolid</small>
+                                            </td>
+                                            <td>
+                                                25/03/2020
+                                            </td>
+                                            <td>
+                                                12
+                                            </td>
+                                            <td class="td-number">
+                                                59
+                                            </td>
+                                            <td class="td-number">
+                                                147
+                                            </td>
+                                            <td class="td-number">
+                                                690
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="img-container">
+                                                    <img src="./../../../assets/images/cartelTest.jpg" alt="...">
+                                                </div>
+                                            </td>
+                                            <td class="td-name">
+                                                <a href="#jacket">VI Trail Barranqueras de Toro</a>
+                                                <br><small>Toro, Valladolid</small>
+                                            </td>
+                                            <td>
+                                                25/03/2020
+                                            </td>
+                                            <td>
+                                                12
+                                            </td>
+                                            <td class="td-number">
+                                                59
+                                            </td>
+                                            <td class="td-number">
+                                                147
+                                            </td>
+                                            <td class="td-number">
+                                                690
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="img-container">
+                                                    <img src="./../../../assets/images/cartelTest.jpg" alt="...">
+                                                </div>
+                                            </td>
+                                            <td class="td-name">
+                                                <a href="#jacket">VI Trail Barranqueras de Toro</a>
+                                                <br><small>Toro, Valladolid</small>
+                                            </td>
+                                            <td>
+                                                25/03/2020
+                                            </td>
+                                            <td>
+                                                12
+                                            </td>
+                                            <td class="td-number">
+                                                59
+                                            </td>
+                                            <td class="td-number">
+                                                147
+                                            </td>
+                                            <td class="td-number">
+                                                690
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="img-container">
+                                                    <img src="./../../../assets/images/cartelTest.jpg" alt="...">
+                                                </div>
+                                            </td>
+                                            <td class="td-name">
+                                                <a href="#jacket">VI Trail Barranqueras de Toro</a>
+                                                <br><small>Toro, Valladolid</small>
+                                            </td>
+                                            <td>
+                                                25/03/2020
+                                            </td>
+                                            <td>
+                                                12
+                                            </td>
+                                            <td class="td-number">
+                                                59
+                                            </td>
+                                            <td class="td-number">
+                                                147
+                                            </td>
+                                            <td class="td-number">
+                                                690
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
                         </div>
                     </div>
                 </div>

@@ -2990,7 +2990,7 @@ select.form-control[multiple],
 }
 
 .nav-pills>li>a:hover {
-    background-color: rgba(200, 200, 200, 0.2);
+    background-color: rgba(230, 197, 235, 0.2);
 }
 
 .nav-pills>li i {
@@ -3002,7 +3002,7 @@ select.form-control[multiple],
 .nav-pills>li.active>a,
 .nav-pills>li.active>a:focus,
 .nav-pills>li.active>a:hover {
-    background-color: #636163;
+    background: linear-gradient(60deg, #ab47bc, #7b1fa2);
     color: #FFFFFF;
     box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(106, 106, 106, 0.6);
 }
@@ -4386,6 +4386,10 @@ h2.title {
 
 .card .header-primary,
 .card .content-primary {
+    background: linear-gradient(60deg, #ab47bc, #7b1fa2);
+}
+
+.side-boton {
     background: linear-gradient(60deg, #ab47bc, #7b1fa2);
 }
 
