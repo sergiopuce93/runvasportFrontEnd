@@ -74,23 +74,23 @@
     <div class="row">
         <div class="col-md-1">
             <ul class="nav nav-pills nav-pills-icons nav-stacked">
-                <li class="active">
-                    <a href="#/admin">
+                <li [ngClass]="{'active': active === 0}" (click)="swicth0()">
+                    <a href="#admin">
                         <i class="material-icons">dashboard</i> Dashboard
                     </a>
                 </li>
-                <li>
-                    <a href="#admin/eventos/nuevo" role="tab" data-toggle="tab">
+                <li [ngClass]="{'active': active === 1}" (click)="swicth1()">
+                    <a href="#admin/eventos/nuevo">
                         <i class="fas fa-calendar-plus"></i>Evento
                     </a>
                 </li>
-                <li>
-                    <a href="" role="tab" data-toggle="tab">
+                <li [ngClass]="{'active': active === 2}" (click)="swicth2()">
+                    <a href="#admin">
                         <i class="fas fa-sliders-h"></i> Ajustes
                     </a>
                 </li>
-                <li>
-                    <a href="" role="tab" data-toggle="tab">
+                <li [ngClass]="{'active': active === 3}" (click)="swicth3()">
+                    <a href="#admin">
                         <i class="fas fa-address-card"></i> Perfil
                     </a>
                 </li>
