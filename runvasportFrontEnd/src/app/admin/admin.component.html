@@ -1,0 +1,48 @@
+<nav class="navbar navbar-inverse" role="navigation-demo">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+
+            <a class="navbar-brand" href="#pablo">Panel Admin</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navigation-example-2">
+            <ul class="nav navbar-nav navbar-right">
+
+                <li>
+                    <a><span><i class="fas fa-user"></i></span>
+                Hola Justino
+            </a>
+                </li>
+                <li>
+                    <a href="#pablo">
+                        Cerrar sesion
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-->
+</nav>
+
+<div class="row">
+    <div class="col-md-2" style="border-right: 1px black solid">
+        <ul class="nav nav-pills nav nav-stacked">
+            <li class="active"><a data-toggle="tab" aria-expanded="true" (click)="navigateTablon()">Tablon</a></li>
+            <li class=""><a data-toggle="tab" aria-expanded="false" (click)="navigateEvents()">Eventos</a></li>
+            <li class=""><a href="#tab3" data-toggle="tab" aria-expanded="false" (click)="navigateCupons()">Cupones</a></li>
+            <li class=""><a href="#tab3" data-toggle="tab" aria-expanded="false" (click)="navigateUsers()">Usuarios</a></li>
+        </ul>
+    </div>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</div>

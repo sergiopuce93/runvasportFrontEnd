@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="col-md-12">
+        <div class="card card-plain card-form-horizontal" style="margin-bottom:0">
+            <div class="card-content">
+                <div class="row">
+                    <div _ngcontent-c12="">
+                        <button _ngcontent-c12="" class="icon-btn add-btn col-md-2" [routerLink]="['/admin/eventos/nuevo']" routerLinkActive="router-link-active">
+                            <div _ngcontent-c12=""  class="add-icon"></div><div _ngcontent-c12="" class="btn-txt" style="color:white">Nuevo
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <div class="form-group form-white is-empty">
+                                <input type="text" class="form-control" placeholder="Buscar" [(ngModel)]="search">
+                                <span class="material-input"></span>
+                            </div>
+                            <span class="input-group-addon">
+                                <i class="material-icons">search</i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive fadeIn">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Evento</th>
+                        <th>Lugar</th>
+                        <th>Fecha</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let event of listEvents | filter: search" class="fadeIn">
+                        <td class="tablaHover">{{event.name}}</td>
+                        <td class="tablaHover">{{event.place}}</td>
+                        <td class="tablaHover ">{{event.dateEnd}}</td>
+                        <td class="td-actions ">
+                            <button type="button " rel="tooltip " class="btn btn-info btn-round mr-2 " data-original-title=" " title=" ">
+                                <i class="fas fa-eye "></i>
+                            </button>
+                            <button type="button " rel="tooltip " class="btn btn-warning btn-round " data-original-title=" " title=" ">
+                                <i class="material-icons ">edit</i>
+                            </button>
+                            <button type="button " rel="tooltip " class="btn btn-danger btn-round " data-original-title=" " title=" ">
+                                <i class="material-icons ">close</i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr *ngIf="(listEvents | filter:search) == 0">
+                        <td colspan="5" class="text-center fadeIn">No se encontraron resultados...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
