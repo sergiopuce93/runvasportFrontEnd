@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 @NgModule({
     declarations: [
@@ -29,14 +30,15 @@ import { FormsModule } from '@angular/forms';
         UsuariosComponent,
         TablonComponent,
         CuponesComponent,
-        EventosComponent
+        EventosComponent,
     ],
     imports: [
         ADMIN_ROUTES,
         BrowserModule,
         CommonModule,
         Ng2SearchPipeModule,
-        FormsModule
+        FormsModule,
+        NgxEchartsModule,
     ]
 })
 export class AdminModule { }
