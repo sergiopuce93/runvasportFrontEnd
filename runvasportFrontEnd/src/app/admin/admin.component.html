@@ -1,5 +1,5 @@
 <nav class="navbar navbar-inverse navbar-primary" role="navigation-demo">
-    <div class="container">
+    <div class="container-runva">
         <!-- Breadcrumb -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
@@ -8,6 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+
             <a class="navbar-brand" href="#pablo">Administrador</a>
         </div>
 
@@ -16,7 +17,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-calendar-alt"></i>&nbsp;Eventos
+                        <i class="fas fa-calendar-alt icon-big"></i>&nbsp;Eventos
                         <b class="caret"></b>
                         <div class="ripple-container"></div>
                     </a>
@@ -29,7 +30,7 @@
                 </li>
                 <li class="dropdown">
                     <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-tags"></i>&nbsp;Cupones
+                        <i class="fas fa-tags icon-big"></i>&nbsp;Cupones
                         <b class="caret"></b>
                         <div class="ripple-container"></div>
                     </a>
@@ -42,7 +43,7 @@
                 </li>
                 <li class="dropdown">
                     <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-users"></i>&nbsp;Usuarios
+                        <i class="fas fa-users icon-big"></i>&nbsp;Usuarios
                         <b class="caret"></b>
                         <div class="ripple-container"></div>
                     </a>
@@ -55,7 +56,7 @@
                 </li>
                 <li class="dropdown">
                     <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-address-card"></i>&nbsp;Mi perfil
+                        <i class="fas fa-address-card icon-big"></i>&nbsp;Mi perfil
                         <b class="caret"></b>
                         <div class="ripple-container"></div>
                     </a>
@@ -81,17 +82,17 @@
                 </li>
                 <li [ngClass]="{'active': active === 1}" (click)="swicth1()">
                     <a href="#admin/eventos/nuevo">
-                        <i class="fas fa-calendar-plus"></i>Evento
+                        <i class="fas fa-calendar-plus icon-big"></i>Evento
                     </a>
                 </li>
                 <li [ngClass]="{'active': active === 2}" (click)="swicth2()">
                     <a href="#admin">
-                        <i class="fas fa-sliders-h"></i> Ajustes
+                        <i class="fas fa-sliders-h icon-big"></i> Ajustes
                     </a>
                 </li>
                 <li [ngClass]="{'active': active === 3}" (click)="swicth3()">
                     <a href="#admin">
-                        <i class="fas fa-address-card"></i> Perfil
+                        <i class="fas fa-address-card icon-big"></i> Perfil
                     </a>
                 </li>
             </ul>
