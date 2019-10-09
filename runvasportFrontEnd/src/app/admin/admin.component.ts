@@ -42,5 +42,8 @@ export class AdminComponent implements OnInit {
   swicth3() {
     this.active = 3;
   }
+  swichNull() {
+    this.active = null;
+  }
 
 }

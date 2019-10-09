@@ -22,10 +22,10 @@
                         <div class="ripple-container"></div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right">
-                        <li><a href="#admin/eventos">Mis eventos</a></li>
-                        <li><a href="#admin/eventos/nuevo">Crear evento</a></li>
-                        <li><a href="#">Actualizar eventos</a></li>
-                        <li><a href="#">Eliminar eventos</a></li>
+                        <li><a (click)="swichNull()" href="#admin/eventos">Mis eventos</a></li>
+                        <li><a (click)="swichNull()" href="#admin/eventos/nuevo">Crear evento</a></li>
+                        <li><a (click)="swichNull()" href="#">Actualizar eventos</a></li>
+                        <li><a (click)="swichNull()" href="#">Eliminar eventos</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -35,10 +35,10 @@
                         <div class="ripple-container"></div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right">
-                        <li><a href="#">Mis cupones</a></li>
-                        <li><a href="#">Crear cupon</a></li>
-                        <li><a href="#">Actualizar cupones</a></li>
-                        <li><a href="#">Eliminar cupones</a></li>
+                        <li><a (click)="swichNull()" href="#">Mis cupones</a></li>
+                        <li><a (click)="swichNull()" href="#">Crear cupon</a></li>
+                        <li><a (click)="swichNull()" href="#">Actualizar cupones</a></li>
+                        <li><a (click)="swichNull()" href="#">Eliminar cupones</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -48,10 +48,10 @@
                         <div class="ripple-container"></div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right">
-                        <li><a href="#">Ver Usuarios</a></li>
-                        <li><a href="#">Crear usuario</a></li>
-                        <li><a href="#">Actualizar usuario</a></li>
-                        <li><a href="#">Eliminar usuario</a></li>
+                        <li><a (click)="swichNull()" href="#">Ver Usuarios</a></li>
+                        <li><a (click)="swichNull()" href="#">Crear usuario</a></li>
+                        <li><a (click)="swichNull()" href="#">Actualizar usuario</a></li>
+                        <li><a (click)="swichNull()" href="#">Eliminar usuario</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -61,8 +61,10 @@
                         <div class="ripple-container"></div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right">
-                        <li><a href="#">Ver perfil</a></li>
-                        <li><a href="#home">Cerrar sesion</a></li>
+                        <li><a (click)="swichNull()" href="#">Ver perfil</a></li>
+                        <li><a (click)="swichNull()" href="#home">Ir a sitio web</a></li>
+
+                        <li><a (click)="swichNull()" href="#home">Cerrar sesion</a></li>
                     </ul>
                 </li>
             </ul>
