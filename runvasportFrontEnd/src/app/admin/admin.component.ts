@@ -30,16 +30,16 @@ export class AdminComponent implements OnInit {
   }
 
 
-  swicth0() {
+  swicthDashboard() {
     this.active = 0;
   }
-  swicth1() {
+  swicthEvent() {
     this.active = 1;
   }
-  swicth2() {
+  swicthConfig() {
     this.active = 2;
   }
-  swicth3() {
+  swicthProfile() {
     this.active = 3;
   }
   swichNull() {
