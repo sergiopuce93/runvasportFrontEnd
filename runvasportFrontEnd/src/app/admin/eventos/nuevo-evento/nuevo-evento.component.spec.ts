@@ -8,9 +8,9 @@ describe('NuevoEventoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NuevoEventoComponent ]
+      declarations: [NuevoEventoComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -18,6 +18,4 @@ describe('NuevoEventoComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
-  
 });

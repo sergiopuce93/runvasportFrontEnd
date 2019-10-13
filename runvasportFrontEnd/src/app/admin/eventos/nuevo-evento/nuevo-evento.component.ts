@@ -85,4 +85,23 @@ export class NuevoEventoComponent implements OnInit {
     console.log(this.error);
   }
 
+   /**
+   * Rellenar formulario
+   */
+  relleno() {
+    this.formNewEvent.controls['name'].setValue("test");
+    this.formNewEvent.controls['sport'].setValue("Running/Atletismo");    
+    this.formNewEvent.controls['estimatedParticipants'].setValue(1000);    
+    this.formNewEvent.controls['limitedParticipants'].setValue(1000);    
+    this.formNewEvent.controls['dateIni'].setValue("");    
+    this.formNewEvent.controls['dateEnd'].setValue("");    
+    this.formNewEvent.controls['dateIniInscription'].setValue("");    
+    this.formNewEvent.controls['dateEndInscription'].setValue("");    
+    this.formNewEvent.controls['place'].setValue("valladolid");    
+    this.formNewEvent.controls['country'].setValue("españa");    
+    this.formNewEvent.controls['postalCode'].setValue("47006");    
+    this.formNewEvent.controls['limitedInscri'].setValue("");    
+    
+  }
+
 }
