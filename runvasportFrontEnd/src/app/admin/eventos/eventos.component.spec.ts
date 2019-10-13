@@ -5,7 +5,7 @@ import { EventosComponent } from './eventos.component';
 describe('EventosComponent', () => {
   let component: EventosComponent;
   let fixture: ComponentFixture<EventosComponent>;
-
+  
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ EventosComponent ]
@@ -19,7 +19,5 @@ describe('EventosComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+
 });

@@ -7,10 +7,10 @@ describe('workspace-project App', () => {
   beforeEach(() => {
     page = new AppPage();
   });
-
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to runvasportFrontEnd!');
+  
+  it('should have a title', function() {
+    browser.get('http://localhost:4200/#/home');
+    expect(browser.getTitle()).toEqual('RunvasportFrontEnd');
   });
 
   afterEach(async () => {
