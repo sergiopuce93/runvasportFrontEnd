@@ -8,6 +8,7 @@ import { Evento } from '../../../interfaces/event.interface';
   styleUrls: ['./nuevo-evento.component.css']
 })
 export class NuevoEventoComponent implements OnInit {
+  error: number;
   formNewEvent: FormGroup;
   newEvent: Evento = {
     id: null,
@@ -75,7 +76,13 @@ export class NuevoEventoComponent implements OnInit {
   }
 
   ngOnInit() {
+  this.error = 0;
+  }
 
+  prueba() {
+    console.log(this.formNewEvent);
+    this.error = 1;
+    console.log(this.error);
   }
 
 }

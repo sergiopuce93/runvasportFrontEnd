@@ -22,10 +22,10 @@
                         <div class="ripple-container"></div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right">
-                        <li><a href="#admin/eventos">Mis eventos</a></li>
-                        <li><a href="#admin/eventos/nuevo">Crear evento</a></li>
-                        <li><a href="#">Actualizar eventos</a></li>
-                        <li><a href="#">Eliminar eventos</a></li>
+                        <li><a (click)="swicthEvent()" href="#admin/eventos">Mis eventos</a></li>
+                        <li><a (click)="swicthEvent()" href="#admin/eventos/nuevo">Crear evento</a></li>
+                        <li><a (click)="swicthEvent()" href="#">Actualizar eventos</a></li>
+                        <li><a (click)="swicthEvent()" href="#">Eliminar eventos</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -35,10 +35,10 @@
                         <div class="ripple-container"></div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right">
-                        <li><a href="#">Mis cupones</a></li>
-                        <li><a href="#">Crear cupon</a></li>
-                        <li><a href="#">Actualizar cupones</a></li>
-                        <li><a href="#">Eliminar cupones</a></li>
+                        <li><a (click)="swichNull()" href="#">Mis cupones</a></li>
+                        <li><a (click)="swichNull()" href="#">Crear cupon</a></li>
+                        <li><a (click)="swichNull()" href="#">Actualizar cupones</a></li>
+                        <li><a (click)="swichNull()" href="#">Eliminar cupones</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -48,10 +48,10 @@
                         <div class="ripple-container"></div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right">
-                        <li><a href="#">Ver Usuarios</a></li>
-                        <li><a href="#">Crear usuario</a></li>
-                        <li><a href="#">Actualizar usuario</a></li>
-                        <li><a href="#">Eliminar usuario</a></li>
+                        <li><a (click)="swichNull()" href="#">Ver Usuarios</a></li>
+                        <li><a (click)="swichNull()" href="#">Crear usuario</a></li>
+                        <li><a (click)="swichNull()" href="#">Actualizar usuario</a></li>
+                        <li><a (click)="swichNull()" href="#">Eliminar usuario</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -61,9 +61,16 @@
                         <div class="ripple-container"></div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right">
-                        <li><a href="#">Ver perfil</a></li>
-                        <li><a href="#home">Cerrar sesion</a></li>
+                        <li><a (click)="swicthProfile()" href="#">Ver perfil</a></li>
+                        <li><a (click)="swicthProfile()" href="#home">Ir a sitio web</a></li>
+
+                        <li><a (click)="swicthProfile()" href="#home">Cerrar sesion</a></li>
                     </ul>
+                </li>
+                <li>
+                    <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-sliders-h icon-big"></i>&nbsp;Ajustes
+                    </a>
                 </li>
             </ul>
         </div>
@@ -75,22 +82,22 @@
     <div class="row">
         <div class="col-md-1">
             <ul class="nav nav-pills nav-pills-icons nav-stacked">
-                <li [ngClass]="{'active': active === 0}" (click)="swicth0()">
+                <li [ngClass]="{'active': active === 0}" (click)="swicthDashboard()">
                     <a href="#admin">
                         <i class="material-icons">dashboard</i> Dashboard
                     </a>
                 </li>
-                <li [ngClass]="{'active': active === 1}" (click)="swicth1()">
+                <li [ngClass]="{'active': active === 1}" (click)="swicthEvent()">
                     <a href="#admin/eventos/nuevo">
                         <i class="fas fa-calendar-plus icon-big"></i>Evento
                     </a>
                 </li>
-                <li [ngClass]="{'active': active === 2}" (click)="swicth2()">
+                <li [ngClass]="{'active': active === 2}" (click)="swicthConfig()">
                     <a href="#admin">
                         <i class="fas fa-sliders-h icon-big"></i> Ajustes
                     </a>
                 </li>
-                <li [ngClass]="{'active': active === 3}" (click)="swicth3()">
+                <li [ngClass]="{'active': active === 3}" (click)="swicthProfile()">
                     <a href="#admin">
                         <i class="fas fa-address-card icon-big"></i> Perfil
                     </a>

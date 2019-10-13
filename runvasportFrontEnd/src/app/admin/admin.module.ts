@@ -11,7 +11,7 @@ import { NuevoUsuarioComponent } from './usuarios/nuevo-usuario/nuevo-usuario.co
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxEchartsModule } from 'ngx-echarts';
 
 @NgModule({
@@ -39,6 +39,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
         Ng2SearchPipeModule,
         FormsModule,
         NgxEchartsModule,
+        ReactiveFormsModule
     ]
 })
 export class AdminModule { }
