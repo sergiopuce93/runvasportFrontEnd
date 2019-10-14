@@ -14,6 +14,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxEchartsModule } from 'ngx-echarts';
 
+
 @NgModule({
     declarations: [
         AdminComponent,
@@ -23,14 +24,14 @@ import { NgxEchartsModule } from 'ngx-echarts';
         EventosComponent,
         NuevoEventoComponent,
         NuevoCuponComponent,
-        NuevoUsuarioComponent,
+        NuevoUsuarioComponent
 
     ],
     exports: [
         UsuariosComponent,
         TablonComponent,
         CuponesComponent,
-        EventosComponent,
+        EventosComponent
     ],
     imports: [
         ADMIN_ROUTES,
@@ -39,7 +40,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
         Ng2SearchPipeModule,
         FormsModule,
         NgxEchartsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
     ]
 })
 export class AdminModule { }

@@ -3,6 +3,7 @@ import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { throwError, of, Observable, interval } from 'rxjs';
 import { map, retryWhen, flatMap } from 'rxjs/operators';
+import { Evento } from '../interfaces/event.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -36,13 +37,13 @@ export class EventoService {
   /**
    * Post event
    */
-  newEvent(event: Event) {
+  newEvent(event: Evento) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     };
-    return this.http.post<Event>(this.endpoint, event, httpOptions)
+    return this.http.post<Evento>(this.endpoint + '/', event, httpOptions)
       .pipe(
         map(
           res => {
