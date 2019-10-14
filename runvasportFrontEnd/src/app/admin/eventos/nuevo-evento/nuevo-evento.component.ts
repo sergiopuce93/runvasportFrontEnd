@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Evento } from '../../../interfaces/event.interface';
 import { EventoService } from '../../../services/evento.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-nuevo-evento',
@@ -100,6 +101,13 @@ export class NuevoEventoComponent implements OnInit {
       console.log(data);
     }, err => {
       console.log(err.error.errors);
+      if(err != null) {
+        Swal.fire({
+          type: 'error',
+          title: 'Oops...',
+          text: err.error.errors[0],
+        })
+      } 
     });
   }
 
