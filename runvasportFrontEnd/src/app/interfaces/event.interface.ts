@@ -1,6 +1,6 @@
 export interface Evento {
     id: number,
-    name: string,
+    nombre: string,
     url: string,
     imagen: string,
     sport: string,

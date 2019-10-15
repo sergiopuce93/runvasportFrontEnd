@@ -11,10 +11,11 @@ import Swal from 'sweetalert2'
 })
 export class NuevoEventoComponent implements OnInit {
   error: number;
+  errorFormControl: String;
   formNewEvent: FormGroup;
   newEvent: Evento = {
     id: null,
-    name: null,
+    nombre: null,
     url: null,
     imagen: null,
     sport: null,
@@ -36,9 +37,9 @@ export class NuevoEventoComponent implements OnInit {
   }
   constructor(private eventService: EventoService) {
     this.formNewEvent = new FormGroup({
-      name: new FormControl('', [
+      nombre: new FormControl('', [
         Validators.required,
-        Validators.minLength(2)
+        Validators.minLength(2),
       ]),
       sport: new FormControl('', [
         Validators.required
@@ -77,8 +78,12 @@ export class NuevoEventoComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Rellena el objeto evento
+   * @param Evento
+   */
   fillEvent(event: Evento) {
-    event.name = (this.formNewEvent.get('name').value).toUpperCase().trim();
+    event.nombre = (this.formNewEvent.get('nombre').value).toUpperCase().trim();
     event.sport = (this.formNewEvent.get('sport').value).toUpperCase().trim();
     event.estimatedParticipants = this.formNewEvent.get('estimatedParticipants').value;
     event.limitedParticipants = this.formNewEvent.get('limitedParticipants').value;
@@ -95,38 +100,94 @@ export class NuevoEventoComponent implements OnInit {
     event.limitedInscri = this.formNewEvent.get('limitedInscri').value
   }
 
+  /**
+   * Valida formulario
+   * @returns Boolean
+   */
+  validateFormNewEvent() {
+    if (this.formNewEvent.status === 'INVALID') {
+     
+        console.log(this.formNewEvent.controls.nombre.valid);
+      
+      for (const key in this.formNewEvent.controls) {
+        if (this.formNewEvent.controls.hasOwnProperty(key)) {
+          const element = this.formNewEvent.controls[key];
+          if (element.errors != null) {
+            // TIPOS DE VALIDACIONES DEL FORMULARIO REQUIRED, MINLENGTH
+            if (element.hasError('required')) {
+              this.errorFormControl = key;
+              Swal.fire({
+                type: 'error',
+                title: 'Error...',
+                text: 'El campo ' + key + ' es requerido',
+              })
+            } else if (element.hasError('minlength')) {
+              this.errorFormControl = key;
+              Swal.fire({
+                type: 'error',
+                title: 'Error...',
+                text: 'El campo ' + key + ' tiene que tener minimo 2 caracteres',
+              })
+            } else if (element.hasError('email')) {
+              this.errorFormControl = key;
+              Swal.fire({
+                type: 'error',
+                title: 'Erro...',
+                text: 'El campo ' + key.toUpperCase() + ' tiene formato incorrecto',
+              })
+            }
+          }
+        }
+      }
+    } else {
+      return true;
+    }
+  }
+
+  /**
+   * Creacion de un evento
+   */
   createEvent() {
-    this.fillEvent(this.newEvent);
-    this.eventService.newEvent(this.newEvent).subscribe(data => {
-      console.log(data);
-    }, err => {
-      console.log(err.error.errors);
-      if(err != null) {
-        Swal.fire({
-          type: 'error',
-          title: 'Oops...',
-          text: err.error.errors[0],
-        })
-      } 
-    });
+    if(this.formNewEvent.valid != true) {
+      this.validateFormNewEvent();
+      console.log(this.errorFormControl);
+    } else {
+      console.log("correcto");
+    }
+    // if (this.validateFormNewEvent() === true && this.errorForm === null) {
+    //   this.fillEvent(this.newEvent);
+    //   console.log(this.errorForm);
+      // this.eventService.newEvent(this.newEvent).subscribe(() => {
+      // }, err => {
+      //   if (err != null) {
+      //     Swal.fire({
+      //       type: 'error',
+      //       title: 'Oops...',
+      //       text: 'Error al crear el evento',
+      //     })
+      //   }
+      // });
+    // } else {
+
+    // }
   }
 
   /**
   * FUNCION DESARROLLO
   */
   relleno() {
-    this.formNewEvent.controls['name'].setValue("test");
+    // this.formNewEvent.controls['nombre'].setValue("");
     this.formNewEvent.controls['sport'].setValue("Running/Atletismo");
-    this.formNewEvent.controls['estimatedParticipants'].setValue(1000);
-    this.formNewEvent.controls['limitedParticipants'].setValue(1000);
-    this.formNewEvent.controls['dateIni'].setValue("");
-    this.formNewEvent.controls['dateEnd'].setValue("");
-    this.formNewEvent.controls['dateIniInscription'].setValue("");
-    this.formNewEvent.controls['dateEndInscription'].setValue("");
-    this.formNewEvent.controls['place'].setValue("valladolid");
-    this.formNewEvent.controls['country'].setValue("españa");
-    this.formNewEvent.controls['postalCode'].setValue("47006");
-    this.formNewEvent.controls['limitedInscri'].setValue(122);
+    // this.formNewEvent.controls['estimatedParticipants'].setValue(1000);
+    // this.formNewEvent.controls['limitedParticipants'].setValue(1000);
+    // this.formNewEvent.controls['dateIni'].setValue("");
+    // this.formNewEvent.controls['dateEnd'].setValue("");
+    // this.formNewEvent.controls['dateIniInscription'].setValue("");
+    // this.formNewEvent.controls['dateEndInscription'].setValue("");
+    // this.formNewEvent.controls['place'].setValue("valladolid");
+    // this.formNewEvent.controls['country'].setValue("españa");
+    // this.formNewEvent.controls['postalCode'].setValue("47006");
+    // this.formNewEvent.controls['limitedInscri'].setValue(122);
   }
 
 }
