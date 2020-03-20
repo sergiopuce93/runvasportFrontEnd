@@ -106,9 +106,6 @@ export class NuevoEventoComponent implements OnInit {
    */
   validateFormNewEvent() {
     if (this.formNewEvent.status === 'INVALID') {
-     
-        console.log(this.formNewEvent.controls.nombre.valid);
-      
       for (const key in this.formNewEvent.controls) {
         if (this.formNewEvent.controls.hasOwnProperty(key)) {
           const element = this.formNewEvent.controls[key];
@@ -148,29 +145,39 @@ export class NuevoEventoComponent implements OnInit {
    * Creacion de un evento
    */
   createEvent() {
-    if(this.formNewEvent.valid != true) {
+    if (this.formNewEvent.valid != true) {
       this.validateFormNewEvent();
-      console.log(this.errorFormControl);
     } else {
-      console.log("correcto");
+      this.fillEvent(this.newEvent);
+      this.eventService.newEvent(this.newEvent).subscribe(() => {
+      }, err => {
+        if (err != null) {
+          Swal.fire({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Error al crear el evento',
+          })
+        }
+      });
     }
-    // if (this.validateFormNewEvent() === true && this.errorForm === null) {
-    //   this.fillEvent(this.newEvent);
-    //   console.log(this.errorForm);
-      // this.eventService.newEvent(this.newEvent).subscribe(() => {
-      // }, err => {
-      //   if (err != null) {
-      //     Swal.fire({
-      //       type: 'error',
-      //       title: 'Oops...',
-      //       text: 'Error al crear el evento',
-      //     })
-      //   }
-      // });
-    // } else {
-
-    // }
   }
+  // if (this.validateFormNewEvent() === true && this.errorForm === null) {
+  //   this.fillEvent(this.newEvent);
+  //   console.log(this.errorForm);
+  // this.eventService.newEvent(this.newEvent).subscribe(() => {
+  // }, err => {
+  //   if (err != null) {
+  //     Swal.fire({
+  //       type: 'error',
+  //       title: 'Oops...',
+  //       text: 'Error al crear el evento',
+  //     })
+  //   }
+  // });
+  // } else {
+
+  // }
+
 
   /**
   * FUNCION DESARROLLO
