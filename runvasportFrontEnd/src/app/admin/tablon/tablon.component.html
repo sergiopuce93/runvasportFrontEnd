@@ -1,0 +1,254 @@
+<div class="col-md-3">
+    <div class="card card-nav-tabs">
+        <div class="header header-primary">
+            <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+            <div class="container">
+                <h4 class="card-title"><i class="fas fa-chart-bar icon-big"></i>&nbsp;Ultimos 7 dias</h4>
+            </div>
+        </div>
+        <div class="card-content">
+            <div echarts [options]="chartOption" class="echart"></div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="card card-nav-tabs">
+        <div class="header header-primary">
+            <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+            <div class="container">
+                <h4 class="card-title"><i class="fas fa-chart-line"></i>&nbsp;Ultimas 24 horas</h4>
+            </div>
+        </div>
+        <div class="card-content">
+            <div class="card-content">
+                <div echarts [options]="chartOption2" class="echart"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="card card-nav-tabs">
+        <div class="header header-primary">
+            <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+            <div class="container">
+                <h4 class="card-title"><i class="fas fa-ticket-alt"></i>&nbsp; Ultimas inscripciones</h4>
+            </div>
+        </div>
+        <div class="card-content">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th>Nombre</th>
+                            <th>Fecha</th>
+                            <th class="text-right">Tarifa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td>Daniel</td>
+                            <td>10/092013</td>
+                            <td class="text-right">10,00€</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td>Daniel</td>
+                            <td>10/092013</td>
+                            <td class="text-right">10,00€</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td>Daniel</td>
+                            <td>10/092013</td>
+                            <td class="text-right">10,00€</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td>Daniel</td>
+                            <td>10/092013</td>
+                            <td class="text-right">10,00€</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td>Daniel</td>
+                            <td>10/092013</td>
+                            <td class="text-right">10,00€</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="card card-nav-tabs">
+        <div class="header header-primary">
+            <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+            <div style="margin-left: 50%">
+                <h4 class="card-title center"><i class="fas fa-calendar-alt"></i>&nbsp; Ultimos eventos</h4>
+            </div>
+        </div>
+        <div class="card-content">
+            <div class="card-content">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="table-responsive">
+                        <table class="table table-shopping">
+                            <thead>
+                                <tr>
+                                    <th class="text-center"></th>
+                                    <th>Evento</th>
+                                    <th class="th-description">Fecha</th>
+                                    <th class="th-description">Hoy</th>
+                                    <th class="text-right">Semana</th>
+                                    <th class="text-right">Mes</th>
+                                    <th class="text-right">Total</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="img-container">
+                                            <img src="./../../../assets/images/cartelTest.jpg" alt="...">
+                                        </div>
+                                    </td>
+                                    <td class="td-name">
+                                        <a href="#jacket">VI Trail Barranqueras de Toro</a>
+                                        <br><small>Toro, Valladolid</small>
+                                    </td>
+                                    <td>
+                                        25/03/2020
+                                    </td>
+                                    <td>
+                                        12
+                                    </td>
+                                    <td class="td-number">
+                                        59
+                                    </td>
+                                    <td class="td-number">
+                                        147
+                                    </td>
+                                    <td class="td-number">
+                                        690
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="img-container">
+                                            <img src="./../../../assets/images/cartelTest.jpg" alt="...">
+                                        </div>
+                                    </td>
+                                    <td class="td-name">
+                                        <a href="#jacket">VI Trail Barranqueras de Toro</a>
+                                        <br><small>Toro, Valladolid</small>
+                                    </td>
+                                    <td>
+                                        25/03/2020
+                                    </td>
+                                    <td>
+                                        12
+                                    </td>
+                                    <td class="td-number">
+                                        59
+                                    </td>
+                                    <td class="td-number">
+                                        147
+                                    </td>
+                                    <td class="td-number">
+                                        690
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="img-container">
+                                            <img src="./../../../assets/images/cartelTest.jpg" alt="...">
+                                        </div>
+                                    </td>
+                                    <td class="td-name">
+                                        <a href="#jacket">VI Trail Barranqueras de Toro</a>
+                                        <br><small>Toro, Valladolid</small>
+                                    </td>
+                                    <td>
+                                        25/03/2020
+                                    </td>
+                                    <td>
+                                        12
+                                    </td>
+                                    <td class="td-number">
+                                        59
+                                    </td>
+                                    <td class="td-number">
+                                        147
+                                    </td>
+                                    <td class="td-number">
+                                        690
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="img-container">
+                                            <img src="./../../../assets/images/cartelTest.jpg" alt="...">
+                                        </div>
+                                    </td>
+                                    <td class="td-name">
+                                        <a href="#jacket">VI Trail Barranqueras de Toro</a>
+                                        <br><small>Toro, Valladolid</small>
+                                    </td>
+                                    <td>
+                                        25/03/2020
+                                    </td>
+                                    <td>
+                                        12
+                                    </td>
+                                    <td class="td-number">
+                                        59
+                                    </td>
+                                    <td class="td-number">
+                                        147
+                                    </td>
+                                    <td class="td-number">
+                                        690
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="img-container">
+                                            <img src="./../../../assets/images/cartelTest.jpg" alt="...">
+                                        </div>
+                                    </td>
+                                    <td class="td-name">
+                                        <a href="#jacket">VI Trail Barranqueras de Toro</a>
+                                        <br><small>Toro, Valladolid</small>
+                                    </td>
+                                    <td>
+                                        25/03/2020
+                                    </td>
+                                    <td>
+                                        12
+                                    </td>
+                                    <td class="td-number">
+                                        59
+                                    </td>
+                                    <td class="td-number">
+                                        147
+                                    </td>
+                                    <td class="td-number">
+                                        690
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+body>app-root>app-admin>div>div.col-md-2>ul>li.active>a {
+    background-color: grey !important;
+}
+
+.icon-big {
+    font-size: 25px
+}
+
+.container-runva {
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
