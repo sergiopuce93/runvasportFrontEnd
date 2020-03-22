@@ -53,4 +53,22 @@ export class EventoService {
       );
   }
 
+  postFile(file: FormData) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+      
+      })
+    };
+    return this.http.post(this.endpoint + '/fileUpload', file, httpOptions)
+      .pipe(
+        map(
+          res => {
+            return res;
+          }
+        )
+      );
+  }
+
+
+
 }

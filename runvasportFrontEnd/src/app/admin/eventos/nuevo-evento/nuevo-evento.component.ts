@@ -36,8 +36,6 @@ export class NuevoEventoComponent implements OnInit {
       sport: new FormControl('', [
         Validators.required
       ]),
-      image: new FormControl('', [
-      ]),
       dateIni: new FormControl('', [
       ]),
       dateEnd: new FormControl('', [
@@ -63,7 +61,6 @@ export class NuevoEventoComponent implements OnInit {
   fillEvent(event: Evento) {
     event.name = (this.formNewEvent.get('name').value).toUpperCase().trim();
     event.sport = (this.formNewEvent.get('sport').value).toUpperCase().trim();
-    event.imagen = this.formNewEvent.get('image').value;
     event.dateIni = this.formNewEvent.get('dateIni').value;
     event.dateEnd = this.formNewEvent.get('dateEnd').value;
     event.place = (this.formNewEvent.get('place').value).toUpperCase().trim();
@@ -117,16 +114,18 @@ export class NuevoEventoComponent implements OnInit {
    * Creacion de un evento
    */
   createEvent() {
-    if (this.formNewEvent.valid != true) {
+    this.uploadFileToActivity();
+
+   /*  if (this.formNewEvent.valid != true) {
       this.validateFormNewEvent();
     } else {
       this.fillEvent(this.newEvent);
       console.log(this.newEvent);
       this.eventService.newEvent(this.newEvent).subscribe(data => {
         Swal.fire({
-            type: 'success',
-            title: 'Evento creado'
-          })
+          type: 'success',
+          title: 'Evento creado'
+        })
       }, err => {
         if (err != null) {
           Swal.fire({
@@ -136,12 +135,25 @@ export class NuevoEventoComponent implements OnInit {
           })
         }
       });
-    }
+    } */
+  }
+
+  toFormData(file: File) {
+    const formData: FormData = new FormData();
+    formData.append('file', file, file.name);
+    return formData;
   }
 
   handleFileInput(files: FileList) {
-    this.labelImport.nativeElement.innerText = files.item(0).name;
     this.fileToUpload = files.item(0);
   }
 
+  uploadFileToActivity() {
+    
+    this.eventService.postFile(this.toFormData(this.fileToUpload)).subscribe((data) => {
+      // do something, if upload success
+    }, error => {
+      console.log(error);
+    });
+  }
 }
