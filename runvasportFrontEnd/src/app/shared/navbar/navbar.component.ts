@@ -14,7 +14,19 @@ export class NavbarComponent implements OnInit {
   }
 
   redirect() {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/home']);
+  }
+
+  navigateCalendar(){
+    this.router.navigate(['home/calendar']);
+  }
+
+  navigateOrgan(){
+    this.router.navigate(['home/organ']);
+  }
+
+  navigateContact(){
+    this.router.navigate(['home/contact']);
   }
 
 }

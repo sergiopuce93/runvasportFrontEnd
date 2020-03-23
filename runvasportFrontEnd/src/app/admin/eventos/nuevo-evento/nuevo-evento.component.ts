@@ -10,6 +10,7 @@ import Swal from 'sweetalert2'
   styleUrls: ['./nuevo-evento.component.css']
 })
 export class NuevoEventoComponent implements OnInit {
+  fileOk = null;
   labelImport: ElementRef;
   fileToUpload: File = null;
   error: number;
@@ -37,16 +38,21 @@ export class NuevoEventoComponent implements OnInit {
         Validators.required
       ]),
       dateIni: new FormControl('', [
+        Validators.required,
       ]),
       dateEnd: new FormControl('', [
+        Validators.required,
       ]),
       place: new FormControl('', [
+        Validators.required,
       ]),
       address: new FormControl('', [
       ]),
       country: new FormControl('', [
+        Validators.required,
       ]),
       provincia: new FormControl('', [
+        Validators.required,
       ]),
     });
   }
@@ -114,28 +120,36 @@ export class NuevoEventoComponent implements OnInit {
    * Creacion de un evento
    */
   createEvent() {
-    this.uploadFileToActivity();
-
-   /*  if (this.formNewEvent.valid != true) {
+    if (!this.formNewEvent.valid) {
       this.validateFormNewEvent();
     } else {
       this.fillEvent(this.newEvent);
-      console.log(this.newEvent);
-      this.eventService.newEvent(this.newEvent).subscribe(data => {
-        Swal.fire({
-          type: 'success',
-          title: 'Evento creado'
-        })
-      }, err => {
-        if (err != null) {
-          Swal.fire({
-            type: 'error',
-            title: 'Oops...',
-            text: err,
-          })
+      this.eventService.postFile(this.toFormData(this.fileToUpload)).subscribe((data: any) => {
+        if (data) {
+          this.newEvent.imagen = data.name;
+          this.eventService.newEvent(this.newEvent).subscribe(async data => {
+            Swal.fire({
+              type: 'success',
+              title: 'Evento creado'
+            })
+          }, err => {
+            if (err != null) {
+              Swal.fire({
+                type: 'error',
+                title: 'Oops...',
+                text: err,
+              })
+            }
+          });
         }
+      }, error => {
+        Swal.fire({
+          type: 'error',
+          title: 'Oops...',
+          text: error,
+        })
       });
-    } */
+    }
   }
 
   toFormData(file: File) {
@@ -148,12 +162,12 @@ export class NuevoEventoComponent implements OnInit {
     this.fileToUpload = files.item(0);
   }
 
-  uploadFileToActivity() {
-    
+  /* uploadFileToActivity() {
     this.eventService.postFile(this.toFormData(this.fileToUpload)).subscribe((data) => {
-      // do something, if upload success
+      console.log(data);
+      this.fileOk = true;
     }, error => {
-      console.log(error);
+      this.fileOk = false;
     });
-  }
+  } */
 }

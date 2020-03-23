@@ -8,28 +8,23 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" (click)="redirect()">HOME</a>
+            <a class="navbar-brand" (click)="redirect()">Inicio</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a routerLink="'/calendar'" routerLinkActive="router-link-active">
-                        <i class="material-icons">apps</i> Components
+                    <a (click)="navigateCalendar()">
+                        <i class="material-icons">apps</i> Calendario
                     </a>
                 </li>
                 <li>
-                    <a>
-                        <i class="material-icons">apps</i> Login
+                    <a (click)="navigateOrgan()">
+                        <i class="material-icons">apps</i> Organizamos
                     </a>
                 </li>
                 <li>
-                    <a href="">
-                        <i class="material-icons">apps</i> Components
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="material-icons">apps</i> Components
+                    <a (click)="navigateContact()">
+                        <i class="material-icons">apps</i> Contacto
                     </a>
                 </li>
             </ul>

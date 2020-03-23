@@ -1,48 +1,25 @@
 <div class="main main-raised">
     <div class="container">
-        <div class="section text-center">
-            <div class="row">
-                <div class="col-md-8 ml-auto mr-auto">
-                    <h2 id="titulo" class="title">Carreras</h2>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
-                    <h5 class="description">Contents.....</h5>
+        <div class="row" style="margin-top: 20px">
+            <div class="col-md-3" *ngFor="let event of listEvents">
+                <div class="card card-blog">
+                    <div class="card-image">
+                        <img [src]="'../../../assets/images/carteles/'+(event.imagen)" alt="">
+                        <div class="colored-shadow" [style]="'background-image: url(&quot;../../../assets/images/carteles/'+ (event.imagen)+ '&quot;); opacity: 1;'"></div>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">
+                            <span>{{event.name}}</span>
+                        </h4>
+                        <div class="footer">
+                            <div class="author">
+                                <span>{{event.place}}</span>
+                            </div>
+                            <div class="stats">
+                                <i class="material-icons">schedule</i> {{event.dateIni}}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

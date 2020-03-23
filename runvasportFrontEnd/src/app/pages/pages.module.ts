@@ -9,6 +9,7 @@ import { ContactComponent } from './contact/contact.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ClasificationsComponent } from './clasifications/clasifications.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 
@@ -19,7 +20,7 @@ import { ClasificationsComponent } from './clasifications/clasifications.compone
         ContactComponent,
         CalendarComponent,
         ClasificationsComponent,
-        InscriptionComponent
+        InscriptionComponent,
     ],
     exports: [
         DashboardComponent,
@@ -30,6 +31,7 @@ import { ClasificationsComponent } from './clasifications/clasifications.compone
     ],
     imports: [
         SharedModule,
+        BrowserModule,
         PAGES_ROUTES
     ]
 })
