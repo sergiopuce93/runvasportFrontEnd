@@ -1,10 +1,25 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { CalendarView, CalendarEvent, CalendarMonthViewBeforeRenderEvent, CalendarWeekViewBeforeRenderEvent, CalendarDayViewBeforeRenderEvent } from 'angular-calendar';
-import { ViewPeriod } from 'calendar-utils';
+import {
+  Component,
+  ChangeDetectorRef,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
+// As an alternative to rrule there is also rSchedule
+// See https://github.com/mattlewis92/angular-calendar/issues/711#issuecomment-418537158 for more info
 import RRule from 'rrule';
+
+import {
+  CalendarDayViewBeforeRenderEvent,
+  CalendarEvent,
+  CalendarMonthViewBeforeRenderEvent,
+  CalendarView,
+  CalendarWeekViewBeforeRenderEvent
+} from 'angular-calendar';
+import { colors } from '../../../assets/color';
+import { ViewPeriod } from 'calendar-utils';
 import * as moment from 'moment';
-
-
 
 interface RecurringEvent {
   title: string;
@@ -16,30 +31,26 @@ interface RecurringEvent {
     byweekday?: any;
   };
 }
+
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
-  viewPeriod: ViewPeriod;
+  @Input() locale: string = 'en';
+
+  @Output() viewChange: EventEmitter<string> = new EventEmitter();
+
+  @Output() viewDateChange: EventEmitter<Date> = new EventEmitter();
   view: CalendarView = CalendarView.Month;
 
-  viewDate: Date = new Date();
-
-  events: CalendarEvent[] = [];
-
-  activeDayIsOpen: boolean = true;
-
-  calendarEvents: CalendarEvent[] = [];
+  viewDate = moment().toDate();
 
   recurringEvents: RecurringEvent[] = [
     {
       title: 'Recurs on the 5th of each month',
-      color: {
-        primary: '#1e90ff',
-        secondary: '#D1E8FF'
-      },
+      color: colors.yellow,
       rrule: {
         freq: RRule.MONTHLY,
         bymonthday: 5
@@ -47,22 +58,16 @@ export class CalendarComponent implements OnInit {
     },
     {
       title: 'Recurs yearly on the 10th of the current month',
-      color: {
-        primary: '#1e90ff',
-        secondary: '#D1E8FF'
-      },
+      color: colors.blue,
       rrule: {
         freq: RRule.YEARLY,
-        bymonth: 1,
+        bymonth: moment().month() + 1,
         bymonthday: 10
       }
     },
     {
       title: 'Recurs weekly on mondays',
-      color: {
-        primary: '#1e90ff',
-        secondary: '#D1E8FF'
-      },
+      color: colors.red,
       rrule: {
         freq: RRule.WEEKLY,
         byweekday: [RRule.MO]
@@ -70,17 +75,14 @@ export class CalendarComponent implements OnInit {
     }
   ];
 
+  calendarEvents: CalendarEvent[] = [];
+
+  viewPeriod: ViewPeriod;
+
   constructor(private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
-  }
 
-  setView(view: CalendarView) {
-    this.view = view;
-  }
-
-  closeOpenMonthViewDay() {
-    this.activeDayIsOpen = false;
   }
 
   updateCalendarEvents(
