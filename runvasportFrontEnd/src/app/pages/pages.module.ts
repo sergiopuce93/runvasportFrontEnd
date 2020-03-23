@@ -10,7 +10,8 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ClasificationsComponent } from './clasifications/clasifications.component';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 
 @NgModule({
@@ -32,7 +33,11 @@ import { BrowserModule } from '@angular/platform-browser';
     imports: [
         SharedModule,
         BrowserModule,
-        PAGES_ROUTES
+        PAGES_ROUTES,
+        CalendarModule.forRoot({
+            provide: DateAdapter,
+            useFactory: adapterFactory
+          })
     ]
 })
 export class PagesModule { }
