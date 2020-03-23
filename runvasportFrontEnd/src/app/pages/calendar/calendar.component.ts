@@ -20,6 +20,9 @@ import {
 import { colors } from '../../../assets/color';
 import { ViewPeriod } from 'calendar-utils';
 import * as moment from 'moment';
+import { EventoService } from '../../services/evento.service';
+import { Evento } from 'src/app/interfaces/event.interface';
+import { timeout } from 'rxjs/operators';
 
 interface RecurringEvent {
   title: string;
@@ -46,43 +49,47 @@ export class CalendarComponent implements OnInit {
   view: CalendarView = CalendarView.Month;
 
   viewDate = moment().toDate();
-
-  recurringEvents: RecurringEvent[] = [
-    {
-      title: 'Recurs on the 5th of each month',
-      color: colors.yellow,
-      rrule: {
-        freq: RRule.MONTHLY,
-        bymonthday: 5
-      }
-    },
-    {
-      title: 'Recurs yearly on the 10th of the current month',
-      color: colors.blue,
-      rrule: {
-        freq: RRule.YEARLY,
-        bymonth: moment().month() + 1,
-        bymonthday: 10
-      }
-    },
-    {
-      title: 'Recurs weekly on mondays',
-      color: colors.red,
-      rrule: {
-        freq: RRule.WEEKLY,
-        byweekday: [RRule.MO]
-      }
-    }
-  ];
+  listEvents: Evento[] = [];
+  recurringEvents: RecurringEvent[] = [];
 
   calendarEvents: CalendarEvent[] = [];
 
   viewPeriod: ViewPeriod;
 
-  constructor(private cdr: ChangeDetectorRef) { }
+  constructor(private cdr: ChangeDetectorRef, private eService: EventoService) {
+  }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.getEvents();
+    setTimeout(() => {
+      this.fillEvents();
+    },2000);
+  }
 
+  async getEvents() {
+    await this.eService.getAllEvents().subscribe(response => {
+      response.forEach(element => {
+        this.listEvents.push(element);
+      });
+    });
+  }
+
+  fillEvents() {
+    this.listEvents.forEach(event => {
+      const recurringEvent: RecurringEvent =
+      {
+        title: '',
+        color: 'purple',
+        rrule: {
+          freq: RRule.DAILY,
+          bymonthday: null,
+        }
+      };
+      recurringEvent.title = event.name;
+      recurringEvent.rrule.bymonthday = moment(event.dateIni).day();
+      recurringEvent.rrule.bymonth = moment(event.dateIni).month();
+      this.recurringEvents.push(recurringEvent);
+    });
   }
 
   updateCalendarEvents(
